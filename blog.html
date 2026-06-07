@@ -3,36 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 <title>Trading Blog — Options, Volatility & Price Action | Trade with Suresh</title>
-<meta name="description" content="Practical trading articles on options, IV crush, option selling and price action from Suresh, a full-time options trader in Erode.">
+<meta name="description" content="Practical trading articles on options, IV crush, theta decay, VIX, strike selection and price action from Suresh, a full-time options trader in Erode.">
 <meta name="author" content="Trade with Suresh">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#d11a21">
 <link rel="canonical" href="https://tradewithsuresh.com/blog.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Trade with Suresh">
-<meta property="og:title" content="Trade with Suresh — Trading Blog">
-<meta property="og:description" content="Practical trading articles on options, IV crush, option selling and price action from Suresh, a full-time options trader in Erode.">
-<meta property="og:url" content="https://tradewithsuresh.com/blog.html">
-<meta property="og:image" content="https://tradewithsuresh.com/og-image.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Trade with Suresh">
+<meta property="og:title" content="Trade with Suresh — Trading Blog"><meta property="og:description" content="Practical trading articles on options, IV crush, theta decay, VIX, strike selection and price action from Suresh, a full-time options trader in Erode.">
+<meta property="og:url" content="https://tradewithsuresh.com/blog.html"><meta property="og:image" content="https://tradewithsuresh.com/og-image.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Trade with Suresh — Trading Blog">
-<meta name="twitter:description" content="Practical trading articles on options, IV crush, option selling and price action from Suresh, a full-time options trader in Erode.">
-<meta name="twitter:image" content="https://tradewithsuresh.com/og-image.png">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="https://tradewithsuresh.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Trade with Suresh — Trading Blog">
+<meta name="twitter:description" content="Practical trading articles on options, IV crush, theta decay, VIX, strike selection and price action from Suresh, a full-time options trader in Erode."><meta name="twitter:image" content="https://tradewithsuresh.com/og-image.png">
+<link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="https://tradewithsuresh.com/og-image.png">
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org","@type":"Blog","name":"Trade with Suresh Blog",
-  "url":"https://tradewithsuresh.com/blog.html",
-  "publisher":{"@type":"Organization","name":"Trade with Suresh","logo":{"@type":"ImageObject","url":"https://tradewithsuresh.com/og-image.png"}},
-  "blogPost":[
-    {"@type":"BlogPosting","headline":"What Is IV Crush?","url":"https://tradewithsuresh.com/blog-iv-crush.html"},
-    {"@type":"BlogPosting","headline":"Option Selling Basics","url":"https://tradewithsuresh.com/blog-option-selling-basics.html"},
-    {"@type":"BlogPosting","headline":"Market Structure 101","url":"https://tradewithsuresh.com/blog-market-structure.html"}
-  ]
-}
+{"@context":"https://schema.org","@type":"Blog","name":"Trade with Suresh Blog","url":"https://tradewithsuresh.com/blog.html","publisher":{"@type":"Organization","name":"Trade with Suresh","logo":{"@type":"ImageObject","url":"https://tradewithsuresh.com/og-image.png"}},"blogPost":[{"@type":"BlogPosting","headline":"Call vs Put — A Simple Guide","url":"https://tradewithsuresh.com/blog-call-vs-put.html"},{"@type":"BlogPosting","headline":"What Is Theta Decay?","url":"https://tradewithsuresh.com/blog-theta-decay.html"},{"@type":"BlogPosting","headline":"VIX Explained","url":"https://tradewithsuresh.com/blog-vix-explained.html"},{"@type":"BlogPosting","headline":"Strike Selection Basics","url":"https://tradewithsuresh.com/blog-strike-selection.html"},{"@type":"BlogPosting","headline":"Option Buying vs Selling — Which Is Better?","url":"https://tradewithsuresh.com/blog-buying-vs-selling.html"},{"@type":"BlogPosting","headline":"What Is IV Crush?","url":"https://tradewithsuresh.com/blog-iv-crush.html"},{"@type":"BlogPosting","headline":"Option Selling Basics","url":"https://tradewithsuresh.com/blog-option-selling-basics.html"},{"@type":"BlogPosting","headline":"Market Structure 101","url":"https://tradewithsuresh.com/blog-market-structure.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tradewithsuresh.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://tradewithsuresh.com/blog.html"}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -51,19 +42,18 @@
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="wrap"><div class="crumb"><a href="index.html">Home</a> <span>/</span> <span>Blog</span></div></div>
-<header class="page-hero"><div class="wrap">
-  <span class="badge">Trading Blog</span>
-  <h1>Learn the <span class="it">why</span> behind the trade</h1>
-  <p class="sub">Clear, practical notes on options, volatility and price action — written by a full-time trader, for traders who want to understand the markets.</p>
-</div></header>
-<section class="section" style="padding-top:24px"><div class="wrap">
-  <div class="blog-grid">
-  <a href="blog-iv-crush.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12c3 0 3-6 6-6s3 12 6 12 3-6 6-6"/></svg></div><div class="bc"><div class="tag">Volatility</div><h3>What Is IV Crush?</h3><p>Why option premiums collapse after big events — and how it traps buyers who were right about direction.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
-<a href="blog-option-selling-basics.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h4v-4h4v-4h4V6h6"/></svg></div><div class="bc"><div class="tag">Options</div><h3>Option Selling Basics</h3><p>How sellers earn premium, why time decay helps the seller, and the risk that must always be respected.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
-<a href="blog-market-structure.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div class="bc"><div class="tag">Price Action</div><h3>Market Structure 101</h3><p>Higher highs, higher lows, lower highs and lower lows — the foundation of reading any trend.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
-
-  </div>
-  <div class="center-cta reveal"><a href="index.html#courses" class="btn btn-gold">View the courses <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<header class="page-hero"><div class="wrap"><span class="badge">Trading Blog</span><h1>Learn the <span class="it">why</span> behind the trade</h1><p class="sub">Clear, practical notes on options, volatility and price action — written by a full-time trader, for traders who want to understand the markets.</p></div></header>
+<section class="section" style="padding-top:24px"><div class="wrap"><div class="blog-grid">
+<a href="blog-call-vs-put.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l-4 4 4 4M3 15h11M17 13l4-4-4-4M21 9H10"/></svg></div><div class="bc"><div class="tag">Basics</div><h3>Call vs Put — A Simple Guide</h3><p>Calls and puts explained in plain language — what each is, when traders use them, and how to remember the difference.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+<a href="blog-theta-decay.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="bc"><div class="tag">Greeks</div><h3>What Is Theta Decay?</h3><p>Why options lose value every day, why it hurts buyers, and why sellers love time decay.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+<a href="blog-vix-explained.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l4-4M3 18a9 9 0 1118 0"/></svg></div><div class="bc"><div class="tag">Volatility</div><h3>VIX Explained</h3><p>What the VIX is, why it is the fear index, and how traders use it to read sentiment.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+<a href="blog-strike-selection.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg></div><div class="bc"><div class="tag">Strategy</div><h3>Strike Selection Basics</h3><p>ITM, ATM and OTM, delta-based selection, and balancing premium against probability.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+<a href="blog-buying-vs-selling.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 6h6zM19 7l-3 6h6z"/></svg></div><div class="bc"><div class="tag">Strategy</div><h3>Option Buying vs Selling — Which Is Better?</h3><p>A balanced comparison — risk, reward, capital and which suits which trader.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+<a href="blog-iv-crush.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12c3 0 3-6 6-6s3 12 6 12 3-6 6-6"/></svg></div><div class="bc"><div class="tag">Volatility</div><h3>What Is IV Crush?</h3><p>Why option premiums collapse after big events — and how it traps buyers.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+<a href="blog-option-selling-basics.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h4v-4h4v-4h4V6h6"/></svg></div><div class="bc"><div class="tag">Options</div><h3>Option Selling Basics</h3><p>How sellers earn premium, why time decay helps, and the risk to respect.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+<a href="blog-market-structure.html" class="blog-card reveal"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div class="bc"><div class="tag">Price Action</div><h3>Market Structure 101</h3><p>HH, HL, LH and LL — the foundation of reading any trend.</p><span class="rd">Read article <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+</div>
+<div class="center-cta reveal"><a href="index.html#courses" class="btn btn-gold">View the courses <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div></section>
 <footer><div class="wrap foot-in">
   <div class="fl">Trade with Suresh — Perundurai Road, Erode 638011, Tamil Nadu · +91 98947 39996<br>© <span id="yr"></span> Trade with Suresh — Options Trader. All rights reserved.</div>

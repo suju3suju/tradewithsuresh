@@ -6,24 +6,24 @@
 <!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your Measurement ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-<title>What Is IV Crush? Why Option Buyers Lose After Events | Trade with Suresh</title>
-<meta name="description" content="A simple explanation of IV crush — why option premiums collapse after big events, and how it traps option buyers who were right about direction.">
+<title>What Is Theta Decay? Time Decay in Options Explained | Trade with Suresh</title>
+<meta name="description" content="Theta, or time decay, explained simply — why options lose value every day, why it hurts buyers, and why sellers love it.">
 <meta name="author" content="Trade with Suresh">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#d11a21">
-<link rel="canonical" href="https://tradewithsuresh.com/blog-iv-crush.html">
+<link rel="canonical" href="https://tradewithsuresh.com/blog-theta-decay.html">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Trade with Suresh">
-<meta property="og:title" content="What Is IV Crush? — Trade with Suresh"><meta property="og:description" content="A simple explanation of IV crush — why option premiums collapse after big events, and how it traps option buyers who were right about direction.">
-<meta property="og:url" content="https://tradewithsuresh.com/blog-iv-crush.html"><meta property="og:image" content="https://tradewithsuresh.com/og-image.png">
+<meta property="og:title" content="What Is Theta Decay? — Trade with Suresh"><meta property="og:description" content="Theta, or time decay, explained simply — why options lose value every day, why it hurts buyers, and why sellers love it.">
+<meta property="og:url" content="https://tradewithsuresh.com/blog-theta-decay.html"><meta property="og:image" content="https://tradewithsuresh.com/og-image.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="What Is IV Crush? — Trade with Suresh">
-<meta name="twitter:description" content="A simple explanation of IV crush — why option premiums collapse after big events, and how it traps option buyers who were right about direction."><meta name="twitter:image" content="https://tradewithsuresh.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="What Is Theta Decay? — Trade with Suresh">
+<meta name="twitter:description" content="Theta, or time decay, explained simply — why options lose value every day, why it hurts buyers, and why sellers love it."><meta name="twitter:image" content="https://tradewithsuresh.com/og-image.png">
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="https://tradewithsuresh.com/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"What Is IV Crush?","description":"A simple explanation of IV crush — why option premiums collapse after big events, and how it traps option buyers who were right about direction.","image":"https://tradewithsuresh.com/og-image.png","datePublished":"2026-06-07","dateModified":"2026-06-07","author":{"@type":"Person","name":"Suresh","jobTitle":"Options Trader"},"publisher":{"@type":"Organization","name":"Trade with Suresh","logo":{"@type":"ImageObject","url":"https://tradewithsuresh.com/og-image.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://tradewithsuresh.com/blog-iv-crush.html"}}
+{"@context":"https://schema.org","@type":"Article","headline":"What Is Theta Decay?","description":"Theta, or time decay, explained simply — why options lose value every day, why it hurts buyers, and why sellers love it.","image":"https://tradewithsuresh.com/og-image.png","datePublished":"2026-06-07","dateModified":"2026-06-07","author":{"@type":"Person","name":"Suresh","jobTitle":"Options Trader"},"publisher":{"@type":"Organization","name":"Trade with Suresh","logo":{"@type":"ImageObject","url":"https://tradewithsuresh.com/og-image.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://tradewithsuresh.com/blog-theta-decay.html"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tradewithsuresh.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://tradewithsuresh.com/blog.html"},{"@type":"ListItem","position":3,"name":"What Is IV Crush?","item":"https://tradewithsuresh.com/blog-iv-crush.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tradewithsuresh.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://tradewithsuresh.com/blog.html"},{"@type":"ListItem","position":3,"name":"What Is Theta Decay?","item":"https://tradewithsuresh.com/blog-theta-decay.html"}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -41,16 +41,16 @@
   </div>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></nav>
-<div class="wrap"><div class="crumb"><a href="index.html">Home</a> <span>/</span> <a href="blog.html">Blog</a> <span>/</span> <span>What Is IV Crush?</span></div></div>
-<header class="page-hero"><div class="wrap"><span class="badge">Volatility</span><h1>What Is IV Crush?</h1><p class="sub">A simple explanation of IV crush — why option premiums collapse after big events, and how it traps option buyers who were right about direction.</p></div></header>
+<div class="wrap"><div class="crumb"><a href="index.html">Home</a> <span>/</span> <a href="blog.html">Blog</a> <span>/</span> <span>What Is Theta Decay?</span></div></div>
+<header class="page-hero"><div class="wrap"><span class="badge">Greeks</span><h1>What Is Theta Decay?</h1><p class="sub">Theta, or time decay, explained simply — why options lose value every day, why it hurts buyers, and why sellers love it.</p></div></header>
 <section class="section" style="padding-top:24px"><div class="prose reveal">
-<p class="lead-p">Many new option buyers face the same shock: the stock moved in their favour, yet their option still lost money. The usual culprit is <b>IV crush</b>.</p>
-<h2>What implied volatility actually is</h2><p>Implied Volatility (IV) is the market’s expectation of how much a stock or index might move in future. It is not direction — only the expected size of the move. High IV makes options expensive; low IV makes them cheaper.</p>
-<h2>Why IV rises before events</h2><p>Before a known event — results, a budget, an RBI decision — uncertainty is high, so traders rush to buy options and push IV up. Premiums get inflated, sometimes far beyond what the actual move can justify.</p>
-<h2>The crush</h2><p>The moment the event passes, uncertainty disappears and IV collapses quickly. This sudden drop is <b>IV crush</b>. Because much of the premium was inflated volatility, the option can lose value <b>even if the stock moves in your direction</b>.</p>
-<h3>A simple example</h3><p>A buyer pays a rich premium for a call before results expecting a jump. The stock rises a little, but IV halves overnight. The gain from the small move is smaller than the loss from the IV drop, so the call still loses. Right on direction, still a loss — that is IV crush.</p>
-<h2>How traders deal with it</h2><ul><li><b>Buyers</b> avoid expensive options right before events unless they expect a move far bigger than priced in.</li><li><b>Sellers</b> often sell when IV is high and benefit as it crushes — volatility is the heart of selling.</li><li>Always check <b>IV percentile / IV rank</b> first.</li></ul>
-<p>We cover IV crush in detail in both the Option Buying and Options Selling courses.</p>
+<p class="lead-p"><b>Theta</b> is the Greek that measures time decay — how much value an option loses each day, just because time is passing.</p>
+<h2>Why options lose value over time</h2><p>An option is partly a bet on time. The more time left to expiry, the more chance the market has to move your way, so the option costs more. As expiry approaches, that chance shrinks, and the option’s time value steadily drains away. That daily loss is Theta.</p>
+<h2>Theta hurts the buyer</h2><p>If you <b>buy</b> an option and the market does nothing, you still lose a little every day. This is why so many buyers are puzzled when they were "right" but still lost — time quietly worked against them.</p>
+<h2>Theta helps the seller</h2><p>The <b>seller</b> is on the other side. Every day the option loses time value, the seller is closer to keeping the premium. This is why sellers often say "Theta is the seller’s best friend."</p>
+<h2>Theta speeds up near expiry</h2><p>Time decay is not linear. It is slow when expiry is far away and <b>accelerates sharply in the final days</b>, especially for at-the-money options. This is why the last few days before expiry can be brutal for buyers and rewarding (but risky) for sellers.</p>
+<div class="callout">Theta is only one Greek. It works together with Delta (direction), Vega (volatility) and Gamma (speed of change) — and the real skill is reading them together.</div>
+<p>We teach Theta and all the Greeks with live examples in both the Option Buying and Options Selling courses.</p>
 <div class="callout">This article is for education only and is not investment advice or a tip. Options trading carries real risk — always do your own research and manage your risk.</div>
 </div>
 <div class="center-cta"><a href="index.html#courses" class="btn btn-gold">Explore our courses <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a> <a href="https://chat.whatsapp.com/El9i5sLYOCLG20v7WlBBSm?s=sh&p=a&mlu=0" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-left:10px">Join Free Demo Group</a></div>
