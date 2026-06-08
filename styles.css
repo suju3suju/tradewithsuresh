@@ -335,3 +335,56 @@ footer{border-top:1px solid var(--line);padding:42px 0;margin-top:24px}
 .value-banner b{color:var(--gold-soft);font-family:var(--brand);font-weight:700}
 .value-banner .strike{text-decoration:line-through;text-decoration-color:var(--red);color:var(--muted);font-weight:500}
 .value-banner .lim{color:var(--gold-soft);font-weight:700}
+
+/* ===== PROMO ANIMATED SPARK BORDER (Option Buying highlight) ===== */
+@property --spark{syntax:"<angle>";initial-value:0deg;inherits:false}
+.course.promo{animation:promoGlow 2.6s ease-in-out infinite}
+@keyframes promoGlow{0%,100%{box-shadow:0 0 28px rgba(246,217,143,.22)}50%{box-shadow:0 0 60px rgba(246,217,143,.5)}}
+.course.promo::before{content:"";position:absolute;inset:0;border-radius:26px;padding:3px;pointer-events:none;opacity:1;z-index:1;
+  background:conic-gradient(from var(--spark),rgba(246,217,143,.12),#f6d98f,#fffdf2,#e9be63,rgba(246,217,143,.12) 42%,rgba(246,217,143,.12) 58%,#f6d98f,#fffdf2,#e9be63,rgba(246,217,143,.12));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  animation:sparkRun 3.2s linear infinite}
+@keyframes sparkRun{to{--spark:360deg}}
+/* running light dots over the border */
+.course.promo .spark-dots{position:absolute;inset:0;border-radius:26px;pointer-events:none;z-index:2;overflow:hidden}
+.course.promo .spark-dots i{position:absolute;width:7px;height:7px;border-radius:50%;background:#fff7e3;box-shadow:0 0 8px 2px var(--gold-soft);offset-path:inset(0 round 26px);animation:dotRun 3.2s linear infinite}
+.course.promo .spark-dots i:nth-child(2){animation-delay:-1.06s}
+.course.promo .spark-dots i:nth-child(3){animation-delay:-2.13s}
+@keyframes dotRun{to{offset-distance:100%}}
+
+/* ===== COUPON UI ===== */
+.coupon-box{margin-top:4px;text-align:center}
+.coupon-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:12px}
+.coupon-row{display:flex;gap:10px;max-width:390px;margin:0 auto}
+.coupon-input{flex:1;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);background:rgba(255,255,255,.08);color:#fff;font-size:1rem;font-family:var(--body);letter-spacing:.08em;text-transform:uppercase;outline:none;transition:.2s}
+.coupon-input::placeholder{color:rgba(255,240,234,.5);letter-spacing:.02em;text-transform:none}
+.coupon-input:focus{border-color:var(--gold);background:rgba(255,255,255,.12)}
+.coupon-input.shake{animation:cshake .42s}
+@keyframes cshake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.coupon-apply{padding:14px 24px;border-radius:12px;border:0;cursor:pointer;font-weight:700;font-family:var(--brand);font-size:1rem;background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));color:var(--red-darker);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.coupon-apply:hover{transform:translateY(-2px)}
+.coupon-hint{margin-top:13px;font-size:.86rem;color:var(--muted)}
+.coupon-hint b{color:var(--gold-soft);cursor:pointer;border-bottom:1px dashed var(--gold-soft);font-family:var(--mono);letter-spacing:.05em}
+.coupon-err{margin-top:10px;font-size:.85rem;color:#ff9a9a;min-height:1.1em;font-weight:500}
+.coupon-done{display:none}
+.coupon-done.show{display:block;animation:cFadeUp .5s}
+@keyframes cFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.accepted-flash{display:inline-flex;align-items:center;gap:10px;font-family:var(--brand);font-weight:800;font-size:1.5rem;color:var(--gold-soft);text-shadow:0 0 22px rgba(246,217,143,.6);animation:cPop .55s cubic-bezier(.2,1.5,.4,1);margin-bottom:6px}
+.accepted-flash .tick{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));color:var(--red-darker);display:grid;place-items:center;font-size:1.1rem}
+@keyframes cPop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+.accepted-sub{color:var(--muted);margin:4px 0 20px;font-weight:300}
+.accepted-sub b{color:var(--gold-soft);font-weight:600}
+
+/* ===== OPTION BUYING — ANIMATED SPARK BORDER (highlight) ===== */
+@property --spark-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.course.workshop{box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 40px rgba(233,190,99,.22);animation:wkGlow 2.8s ease-in-out infinite}
+@keyframes wkGlow{0%,100%{box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 34px rgba(233,190,99,.2)}50%{box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 64px rgba(233,190,99,.45)}}
+.course.workshop::before{opacity:1;background:linear-gradient(0deg,rgba(233,190,99,.42),rgba(233,190,99,.42))}
+.course.workshop::after{content:"";position:absolute;inset:0;border-radius:26px;padding:3px;background:conic-gradient(from var(--spark-a),transparent 50%,var(--gold-soft) 70%,#fff7e3 82%,var(--gold) 92%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:sparkRun 2.6s linear infinite;pointer-events:none}
+@keyframes sparkRun{to{--spark-a:360deg}}
+/* fallback for browsers without @property: gentle pulse border */
+@supports not (background:conic-gradient(from var(--spark-a),red,blue)){
+  .course.workshop::after{background:linear-gradient(120deg,var(--gold-soft),transparent 40%,transparent 60%,var(--gold));animation:pulseBorder 2s ease-in-out infinite}
+  @keyframes pulseBorder{0%,100%{opacity:.5}50%{opacity:1}}
+}
+

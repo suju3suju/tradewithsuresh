@@ -83,15 +83,28 @@
     <span class="free-tag">★ Free Workshop</span>
     <h3>Option Buying Workshop</h3>
     <div class="pr"><span class="o">₹3,999</span><span class="f">FREE</span></div>
-    <p class="ml">A complete beginner-to-confident workshop — offered free for a limited number of members. First come, first served.</p>
+    <p class="ml">Apply your coupon code to unlock this ₹3,999 workshop for FREE. Limited seats — first come, first served.</p>
     <ul class="mlist">
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Calls, puts, premium &amp; expiry — from scratch</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> The Greeks — Delta, Theta, Vega &amp; Gamma</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> IV, IV crush &amp; reading volatility</li>
     </ul>
     <div class="mtrust">🎓 Join 100+ students already trained</div>
-    <a href="https://forms.gle/1utCSsTctZ5sPAQ76" target="_blank" rel="noopener" class="btn btn-enroll" id="modalGo">Register Now — Claim Free Seat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <span class="mnote">After registering, the workshop date &amp; online link will be shared with you on WhatsApp.</span>
+    <div class="coupon-box" id="couponStage">
+      <div class="coupon-label">Apply Coupon Code</div>
+      <div class="coupon-row">
+        <input type="text" id="couponInput" class="coupon-input" placeholder="Enter coupon code" autocomplete="off" spellcheck="false">
+        <button type="button" class="coupon-apply" id="couponApply">Apply</button>
+      </div>
+      <div class="coupon-hint">Have a code? Tap to use <b id="couponChip">WELCOME3999</b></div>
+      <div class="coupon-err" id="couponErr"></div>
+    </div>
+    <div class="coupon-done" id="couponDone">
+      <div class="accepted-flash"><span class="tick">✓</span> Coupon Accepted!</div>
+      <div class="accepted-sub">Your ₹3,999 workshop is now <b>FREE</b> 🎉</div>
+      <a href="https://forms.gle/1utCSsTctZ5sPAQ76" target="_blank" rel="noopener" class="btn btn-enroll" id="modalGo">Register Now — Claim Free Seat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span class="mnote">After registering, the workshop date &amp; online link will be shared with you on WhatsApp.</span>
+    </div>
   </div>
 </div>
 <footer><div class="wrap foot-in">
@@ -113,7 +126,7 @@ document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{
 const io=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const pb=document.getElementById('progress');const os=()=>{const h=document.documentElement;pb.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';};window.addEventListener('scroll',os,{passive:true});os();
-(function(){const em=document.getElementById('enrollModal');if(em){const close=()=>{em.classList.remove('show');document.body.style.overflow='';};document.querySelectorAll('.js-enroll').forEach(b=>b.addEventListener('click',()=>{em.classList.add('show');document.body.style.overflow='hidden';}));document.getElementById('modalX').addEventListener('click',close);em.addEventListener('click',e=>{if(e.target===em)close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});}})();
+(function(){const em=document.getElementById('enrollModal');if(!em)return;const close=()=>{em.classList.remove('show');document.body.style.overflow='';};document.querySelectorAll('.js-enroll').forEach(b=>b.addEventListener('click',()=>{em.classList.add('show');document.body.style.overflow='hidden';}));var x=document.getElementById('modalX');if(x)x.addEventListener('click',close);em.addEventListener('click',e=>{if(e.target===em)close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});var inp=document.getElementById('couponInput'),ap=document.getElementById('couponApply'),st=document.getElementById('couponStage'),dn=document.getElementById('couponDone'),er=document.getElementById('couponErr'),ch=document.getElementById('couponChip');var CODE='WELCOME3999';function tryc(){var v=(inp.value||'').trim().toUpperCase();if(v===CODE){st.style.display='none';dn.classList.add('show');}else{er.textContent='Invalid coupon code. Please try again.';inp.classList.remove('shake');void inp.offsetWidth;inp.classList.add('shake');}}if(ap)ap.addEventListener('click',tryc);if(inp)inp.addEventListener('keydown',e=>{if(e.key==='Enter')tryc();});if(ch)ch.addEventListener('click',()=>{inp.value=CODE;er.textContent='';inp.focus();});})();
 </script>
 </body>
 </html>
